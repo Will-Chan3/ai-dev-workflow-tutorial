@@ -47,12 +47,6 @@ Deploy the dashboard so it is publicly accessible via a shareable URL.
 
 ## In Progress
 
-### TASK-2: Data loading and basic structure
-Load `sales-data.csv` into a Pandas DataFrame and validate its structure.
-- [ ] CSV loads without errors and columns match the data specification (date, order_id, product, category, region, quantity, unit_price, total_amount)
-- [ ] Date column is parsed as a proper datetime type
-- [ ] Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -61,3 +55,10 @@ Set up the Python project structure and install dependencies (Streamlit, Pandas,
 - [x] Dependencies install cleanly and `streamlit run app.py` renders a blank/placeholder page
 - [x] Commit: d213142
 - Notes: Clean — scaffold code was correct as generated. One environment gotcha hit while testing: the very first `streamlit run app.py` on this machine failed (exit 255) on Streamlit's interactive first-run "enter your email" onboarding prompt, which blocks non-interactive shells. Fixed locally by writing an empty `~/.streamlit/credentials.toml` (a machine-level config file, not part of the repo) — not a code change.
+
+### TASK-2: Data loading and basic structure
+Load `sales-data.csv` into a Pandas DataFrame and validate its structure.
+- [x] CSV loads without errors and columns match the data specification (date, order_id, product, category, region, quantity, unit_price, total_amount)
+- [x] Date column is parsed as a proper datetime type
+- [x] Commit: 8dca655
+- Notes: Added `metrics.py` with `load_sales_data()`, tested via TDD in `tests/test_metrics.py`. Hit one project-setup gap not covered by the plan: pytest's default import mode scopes `sys.path` to `tests/` (no `__init__.py`), so `from metrics import load_sales_data` failed with `ModuleNotFoundError` even after `metrics.py` was created. Fixed by adding an empty root-level `conftest.py`, which pytest always adds to `sys.path` when collecting it — a one-time repo setup fix, not a recurring issue.
