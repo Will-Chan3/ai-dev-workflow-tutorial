@@ -34,12 +34,6 @@ Deploy the dashboard so it is publicly accessible via a shareable URL.
 
 ## In Progress
 
-### TASK-4: Sales trend chart
-Add a line chart showing sales over time.
-- [ ] Line chart renders with time on the x-axis and sales amount on the y-axis
-- [ ] Interactive tooltips show exact values on hover
-- [ ] Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -63,3 +57,10 @@ Display Total Sales and Total Orders as prominent KPI cards.
 - [x] Values match expected output from the PRD (~$116,500 sales, 482 orders)
 - [x] Commit: cb04104
 - Notes: Added `total_sales()`/`total_orders()` and `st.metric` cards, verified against the real dataset ($116,500 / 482, exact match). One plan test needed a tweak: the exact-equality assertion `total_sales(sample_sales_df) == 829.86` failed on a float summation rounding artifact (`829.8600000000001`), not a logic bug — changed it to `pytest.approx(829.86)`.
+
+### TASK-4: Sales trend chart
+Add a line chart showing sales over time.
+- [x] Line chart renders with time on the x-axis and sales amount on the y-axis
+- [x] Interactive tooltips show exact values on hover
+- [x] Commit: 75bc4a3
+- Notes: Clean. Added `monthly_sales_trend()` and a Plotly line chart with markers (Plotly's default hover gives exact-value tooltips for free). Verified against the real dataset: 12 chronological months summing to the same $116,500 total from TASK-3.
