@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from metrics import load_sales_data, total_orders, total_sales
+from metrics import load_sales_data, monthly_sales_trend, total_orders, total_sales
 
 
 def test_load_sales_data_parses_expected_columns_and_date_dtype(tmp_path):
@@ -50,3 +50,14 @@ def test_total_sales_sums_total_amount_column(sample_sales_df):
 
 def test_total_orders_counts_rows(sample_sales_df):
     assert total_orders(sample_sales_df) == 6
+
+
+def test_monthly_sales_trend_groups_by_month_in_chronological_order(sample_sales_df):
+    trend = monthly_sales_trend(sample_sales_df)
+
+    assert list(trend["month"]) == [
+        pd.Timestamp("2024-01-01"),
+        pd.Timestamp("2024-02-01"),
+        pd.Timestamp("2024-03-01"),
+    ]
+    assert list(trend["total_amount"]) == [234.95, 364.94, 229.97]
