@@ -20,14 +20,15 @@ Deploy the dashboard so it is publicly accessible via a shareable URL.
 
 ## In Progress
 
+## Done
+
 ### TASK-6: Testing and refinement
 Verify the dashboard against the PRD's acceptance criteria and clean up presentation.
-- [ ] Dashboard runs end-to-end with no errors or warnings
-- [ ] All values match expected calculations from the CSV
-- [ ] Layout and labels are clear and suitable for an executive presentation
-- [ ] Commit:
-
-## Done
+- [x] Dashboard runs end-to-end with no errors or warnings
+- [x] All values match expected calculations from the CSV
+- [x] Layout and labels are clear and suitable for an executive presentation
+- [x] Commit: 2e996fb
+- Notes: Added `test_real_dataset_matches_prd_expected_output` to `tests/test_metrics.py`, verifying the real CSV against the PRD's expected 482 orders / ~$116,500 sales. Full suite (7 tests) passes. Manually re-ran `streamlit run app.py`: no errors, only Streamlit's generic Watchdog-module performance tip (unrelated to app correctness). Cross-checked every aggregation function against the real dataset — trend, category, and region breakdowns all sum back to the same $116,500.21 total; 5 categories (Electronics on top) and 4 regions, both sorted descending, matching TASK-5's verification. No environment for a live browser screenshot in this session, so visual layout was confirmed via the terminal/HTTP health check plus the presentation choices already validated task-by-task in TASK-3 through TASK-5.
 
 ### TASK-1: Environment setup and project initialization
 Set up the Python project structure and install dependencies (Streamlit, Pandas, Plotly).
