@@ -12,12 +12,6 @@ A milestone can move to Done only when:
 
 ## To Do
 
-### TASK-4: Sales trend chart
-Add a line chart showing sales over time.
-- [ ] Line chart renders with time on the x-axis and sales amount on the y-axis
-- [ ] Interactive tooltips show exact values on hover
-- [ ] Commit:
-
 ### TASK-5: Category and region breakdowns
 Add bar charts for sales by category and sales by region.
 - [ ] Category bar chart shows all 5 categories, sorted highest to lowest, with Electronics on top
@@ -39,6 +33,12 @@ Deploy the dashboard so it is publicly accessible via a shareable URL.
 - [ ] Commit:
 
 ## In Progress
+
+### TASK-4: Sales trend chart
+Add a line chart showing sales over time.
+- [ ] Line chart renders with time on the x-axis and sales amount on the y-axis
+- [ ] Interactive tooltips show exact values on hover
+- [ ] Commit:
 
 ## Done
 
