@@ -1,7 +1,14 @@
 import pandas as pd
 import pytest
 
-from metrics import load_sales_data, monthly_sales_trend, total_orders, total_sales
+from metrics import (
+    load_sales_data,
+    monthly_sales_trend,
+    sales_by_category,
+    sales_by_region,
+    total_orders,
+    total_sales,
+)
 
 
 def test_load_sales_data_parses_expected_columns_and_date_dtype(tmp_path):
@@ -61,3 +68,17 @@ def test_monthly_sales_trend_groups_by_month_in_chronological_order(sample_sales
         pd.Timestamp("2024-03-01"),
     ]
     assert list(trend["total_amount"]) == [234.95, 364.94, 229.97]
+
+
+def test_sales_by_category_sums_and_sorts_descending(sample_sales_df):
+    result = sales_by_category(sample_sales_df)
+
+    assert list(result["category"]) == ["Wearables", "Audio", "Accessories", "Smart Home"]
+    assert list(result["total_amount"]) == pytest.approx([479.97, 159.98, 139.92, 49.99])
+
+
+def test_sales_by_region_sums_and_sorts_descending(sample_sales_df):
+    result = sales_by_region(sample_sales_df)
+
+    assert list(result["region"]) == ["East", "South", "North", "West"]
+    assert list(result["total_amount"]) == [299.99, 254.95, 209.97, 64.95]
