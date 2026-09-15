@@ -12,13 +12,6 @@ A milestone can move to Done only when:
 
 ## To Do
 
-### TASK-3: KPI cards implementation
-Display Total Sales and Total Orders as prominent KPI cards.
-- [ ] Total Sales displayed as formatted currency (e.g. $116,500)
-- [ ] Total Orders displayed as a formatted count
-- [ ] Values match expected output from the PRD (~$116,500 sales, 482 orders)
-- [ ] Commit:
-
 ### TASK-4: Sales trend chart
 Add a line chart showing sales over time.
 - [ ] Line chart renders with time on the x-axis and sales amount on the y-axis
@@ -46,6 +39,13 @@ Deploy the dashboard so it is publicly accessible via a shareable URL.
 - [ ] Commit:
 
 ## In Progress
+
+### TASK-3: KPI cards implementation
+Display Total Sales and Total Orders as prominent KPI cards.
+- [ ] Total Sales displayed as formatted currency (e.g. $116,500)
+- [ ] Total Orders displayed as a formatted count
+- [ ] Values match expected output from the PRD (~$116,500 sales, 482 orders)
+- [ ] Commit:
 
 ## Done
 
