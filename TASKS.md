@@ -40,13 +40,6 @@ Deploy the dashboard so it is publicly accessible via a shareable URL.
 
 ## In Progress
 
-### TASK-3: KPI cards implementation
-Display Total Sales and Total Orders as prominent KPI cards.
-- [ ] Total Sales displayed as formatted currency (e.g. $116,500)
-- [ ] Total Orders displayed as a formatted count
-- [ ] Values match expected output from the PRD (~$116,500 sales, 482 orders)
-- [ ] Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -62,3 +55,11 @@ Load `sales-data.csv` into a Pandas DataFrame and validate its structure.
 - [x] Date column is parsed as a proper datetime type
 - [x] Commit: 8dca655
 - Notes: Added `metrics.py` with `load_sales_data()`, tested via TDD in `tests/test_metrics.py`. Hit one project-setup gap not covered by the plan: pytest's default import mode scopes `sys.path` to `tests/` (no `__init__.py`), so `from metrics import load_sales_data` failed with `ModuleNotFoundError` even after `metrics.py` was created. Fixed by adding an empty root-level `conftest.py`, which pytest always adds to `sys.path` when collecting it — a one-time repo setup fix, not a recurring issue.
+
+### TASK-3: KPI cards implementation
+Display Total Sales and Total Orders as prominent KPI cards.
+- [x] Total Sales displayed as formatted currency (e.g. $116,500)
+- [x] Total Orders displayed as a formatted count
+- [x] Values match expected output from the PRD (~$116,500 sales, 482 orders)
+- [x] Commit: cb04104
+- Notes: Added `total_sales()`/`total_orders()` and `st.metric` cards, verified against the real dataset ($116,500 / 482, exact match). One plan test needed a tweak: the exact-equality assertion `total_sales(sample_sales_df) == 829.86` failed on a float summation rounding artifact (`829.8600000000001`), not a logic bug — changed it to `pytest.approx(829.86)`.
