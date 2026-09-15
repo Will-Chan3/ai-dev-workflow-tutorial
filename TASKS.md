@@ -60,3 +60,4 @@ Set up the Python project structure and install dependencies (Streamlit, Pandas,
 - [x] Project structure created (app.py, data/, requirements.txt)
 - [x] Dependencies install cleanly and `streamlit run app.py` renders a blank/placeholder page
 - [x] Commit: d213142
+- Notes: Clean — scaffold code was correct as generated. One environment gotcha hit while testing: the very first `streamlit run app.py` on this machine failed (exit 255) on Streamlit's interactive first-run "enter your email" onboarding prompt, which blocks non-interactive shells. Fixed locally by writing an empty `~/.streamlit/credentials.toml` (a machine-level config file, not part of the repo) — not a code change.
