@@ -12,12 +12,6 @@ A milestone can move to Done only when:
 
 ## To Do
 
-### TASK-7: Deployment to Streamlit Community Cloud
-Deploy the dashboard so it is publicly accessible via a shareable URL.
-- [ ] App is deployed and reachable at a public Streamlit Community Cloud URL
-- [ ] Deployed app matches local behavior with no errors
-- [ ] Commit:
-
 ## In Progress
 
 ## Done
@@ -66,3 +60,10 @@ Verify the dashboard against the PRD's acceptance criteria and clean up presenta
 - [x] Layout and labels are clear and suitable for an executive presentation
 - [x] Commit: 2e996fb
 - Notes: Clean — no bugs found, nothing changed from the plan. Added `test_real_dataset_matches_prd_expected_output` per the plan exactly as written; full suite (7 tests) passes against the real CSV (482 orders, $116,500.21 sales). One limitation: this session had no connected browser, so the "clean, presentable layout" criterion was confirmed via terminal/HTTP health checks plus the visual verification already done task-by-task in TASK-3 through TASK-5, not a fresh screenshot.
+
+### TASK-7: Deployment to Streamlit Community Cloud
+Deploy the dashboard so it is publicly accessible via a shareable URL.
+- [x] App is deployed and reachable at a public Streamlit Community Cloud URL: https://sales-dashboard-willchan.streamlit.app/
+- [x] Deployed app matches local behavior with no errors
+- [x] Commit: a6ba925
+- Notes: Clean — deployment itself was executed manually by the user per the plan's Task 7 (user-executed, not automated); this session only recorded the live URL in TASKS.md and README.md.
