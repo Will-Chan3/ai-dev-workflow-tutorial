@@ -27,13 +27,6 @@ Deploy the dashboard so it is publicly accessible via a shareable URL.
 
 ## In Progress
 
-### TASK-5: Category and region breakdowns
-Add bar charts for sales by category and sales by region.
-- [ ] Category bar chart shows all 5 categories, sorted highest to lowest, with Electronics on top
-- [ ] Region bar chart shows all 4 regions, sorted highest to lowest
-- [ ] Both charts have interactive tooltips with exact values
-- [ ] Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -64,3 +57,11 @@ Add a line chart showing sales over time.
 - [x] Interactive tooltips show exact values on hover
 - [x] Commit: 75bc4a3
 - Notes: Clean. Added `monthly_sales_trend()` and a Plotly line chart with markers (Plotly's default hover gives exact-value tooltips for free). Verified against the real dataset: 12 chronological months summing to the same $116,500 total from TASK-3.
+
+### TASK-5: Category and region breakdowns
+Add bar charts for sales by category and sales by region.
+- [x] Category bar chart shows all 5 categories, sorted highest to lowest, with Electronics on top
+- [x] Region bar chart shows all 4 regions, sorted highest to lowest
+- [x] Both charts have interactive tooltips with exact values
+- [x] Commit: 43fe48a
+- Notes: Added `sales_by_category()`/`sales_by_region()` and side-by-side Plotly bar charts. Verified against the real dataset: Electronics is on top ($42,683.67), 5 categories and 4 regions both sorted descending. Same float-precision pattern as TASK-3 hit again: the Accessories-category assertion needed `pytest.approx` (`139.92000000000002` vs `139.92`).
