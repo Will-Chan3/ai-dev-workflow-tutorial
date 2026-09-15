@@ -28,7 +28,7 @@ Verify the dashboard against the PRD's acceptance criteria and clean up presenta
 - [x] All values match expected calculations from the CSV
 - [x] Layout and labels are clear and suitable for an executive presentation
 - [x] Commit: 2e996fb
-- Notes: Added `test_real_dataset_matches_prd_expected_output` to `tests/test_metrics.py`, verifying the real CSV against the PRD's expected 482 orders / ~$116,500 sales. Full suite (7 tests) passes. Manually re-ran `streamlit run app.py`: no errors, only Streamlit's generic Watchdog-module performance tip (unrelated to app correctness). Cross-checked every aggregation function against the real dataset — trend, category, and region breakdowns all sum back to the same $116,500.21 total; 5 categories (Electronics on top) and 4 regions, both sorted descending, matching TASK-5's verification. No environment for a live browser screenshot in this session, so visual layout was confirmed via the terminal/HTTP health check plus the presentation choices already validated task-by-task in TASK-3 through TASK-5.
+- Notes: Clean — no bugs found, nothing changed from the plan. Added `test_real_dataset_matches_prd_expected_output` per the plan exactly as written; full suite (7 tests) passes against the real CSV (482 orders, $116,500.21 sales). One limitation: this session had no connected browser, so the "clean, presentable layout" criterion was confirmed via terminal/HTTP health checks plus the visual verification already done task-by-task in TASK-3 through TASK-5, not a fresh screenshot.
 
 ### TASK-1: Environment setup and project initialization
 Set up the Python project structure and install dependencies (Streamlit, Pandas, Plotly).
