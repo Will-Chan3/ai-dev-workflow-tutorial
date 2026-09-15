@@ -53,10 +53,10 @@ Deploy the dashboard so it is publicly accessible via a shareable URL.
 
 ## In Progress
 
+## Done
+
 ### TASK-1: Environment setup and project initialization
 Set up the Python project structure and install dependencies (Streamlit, Pandas, Plotly).
-- [ ] Project structure created (app.py, data/, requirements.txt)
-- [ ] Dependencies install cleanly and `streamlit run app.py` renders a blank/placeholder page
-- [ ] Commit:
-
-## Done
+- [x] Project structure created (app.py, data/, requirements.txt)
+- [x] Dependencies install cleanly and `streamlit run app.py` renders a blank/placeholder page
+- [x] Commit: d213142
