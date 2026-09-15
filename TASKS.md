@@ -12,12 +12,6 @@ A milestone can move to Done only when:
 
 ## To Do
 
-### TASK-2: Data loading and basic structure
-Load `sales-data.csv` into a Pandas DataFrame and validate its structure.
-- [ ] CSV loads without errors and columns match the data specification (date, order_id, product, category, region, quantity, unit_price, total_amount)
-- [ ] Date column is parsed as a proper datetime type
-- [ ] Commit:
-
 ### TASK-3: KPI cards implementation
 Display Total Sales and Total Orders as prominent KPI cards.
 - [ ] Total Sales displayed as formatted currency (e.g. $116,500)
@@ -52,6 +46,12 @@ Deploy the dashboard so it is publicly accessible via a shareable URL.
 - [ ] Commit:
 
 ## In Progress
+
+### TASK-2: Data loading and basic structure
+Load `sales-data.csv` into a Pandas DataFrame and validate its structure.
+- [ ] CSV loads without errors and columns match the data specification (date, order_id, product, category, region, quantity, unit_price, total_amount)
+- [ ] Date column is parsed as a proper datetime type
+- [ ] Commit:
 
 ## Done
 
