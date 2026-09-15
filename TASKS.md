@@ -22,14 +22,6 @@ Deploy the dashboard so it is publicly accessible via a shareable URL.
 
 ## Done
 
-### TASK-6: Testing and refinement
-Verify the dashboard against the PRD's acceptance criteria and clean up presentation.
-- [x] Dashboard runs end-to-end with no errors or warnings
-- [x] All values match expected calculations from the CSV
-- [x] Layout and labels are clear and suitable for an executive presentation
-- [x] Commit: 2e996fb
-- Notes: Clean — no bugs found, nothing changed from the plan. Added `test_real_dataset_matches_prd_expected_output` per the plan exactly as written; full suite (7 tests) passes against the real CSV (482 orders, $116,500.21 sales). One limitation: this session had no connected browser, so the "clean, presentable layout" criterion was confirmed via terminal/HTTP health checks plus the visual verification already done task-by-task in TASK-3 through TASK-5, not a fresh screenshot.
-
 ### TASK-1: Environment setup and project initialization
 Set up the Python project structure and install dependencies (Streamlit, Pandas, Plotly).
 - [x] Project structure created (app.py, data/, requirements.txt)
@@ -66,3 +58,11 @@ Add bar charts for sales by category and sales by region.
 - [x] Both charts have interactive tooltips with exact values
 - [x] Commit: 43fe48a
 - Notes: Added `sales_by_category()`/`sales_by_region()` and side-by-side Plotly bar charts. Verified against the real dataset: Electronics is on top ($42,683.67), 5 categories and 4 regions both sorted descending. Same float-precision pattern as TASK-3 hit again: the Accessories-category assertion needed `pytest.approx` (`139.92000000000002` vs `139.92`).
+
+### TASK-6: Testing and refinement
+Verify the dashboard against the PRD's acceptance criteria and clean up presentation.
+- [x] Dashboard runs end-to-end with no errors or warnings
+- [x] All values match expected calculations from the CSV
+- [x] Layout and labels are clear and suitable for an executive presentation
+- [x] Commit: 2e996fb
+- Notes: Clean — no bugs found, nothing changed from the plan. Added `test_real_dataset_matches_prd_expected_output` per the plan exactly as written; full suite (7 tests) passes against the real CSV (482 orders, $116,500.21 sales). One limitation: this session had no connected browser, so the "clean, presentable layout" criterion was confirmed via terminal/HTTP health checks plus the visual verification already done task-by-task in TASK-3 through TASK-5, not a fresh screenshot.
