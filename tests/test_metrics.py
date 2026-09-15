@@ -82,3 +82,10 @@ def test_sales_by_region_sums_and_sorts_descending(sample_sales_df):
 
     assert list(result["region"]) == ["East", "South", "North", "West"]
     assert list(result["total_amount"]) == [299.99, 254.95, 209.97, 64.95]
+
+
+def test_real_dataset_matches_prd_expected_output():
+    df = load_sales_data("data/sales-data.csv")
+
+    assert total_orders(df) == 482
+    assert total_sales(df) == pytest.approx(116_500, rel=0.05)
